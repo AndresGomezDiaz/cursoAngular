@@ -1,0 +1,16 @@
+<p class="error" *ngIf="error">{{error}}</p>
+<div *ngIf="!error">
+	<div>
+		<ul>
+			<li>Nombre: {{ producto.title }}</li>
+			<li>Precio: {{ producto.price | currency }}</li>
+		</ul>
+	</div>
+	<div>
+		<img [src]="producto.image" alt="Producto">
+		<p>{{ producto.description }}</p>
+		<br>
+		<button routerLink="/products" class="btn-blue">Regresar</button>
+	</div>
+	
+</div>
