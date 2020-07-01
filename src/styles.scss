@@ -5,30 +5,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .product-grid {
 	display:grid;
 	grid-template-columns: repeat(1, 1fr);
+  grid-gap: 50px 20px;
 }
 .error{
 	color: #bf0113;
 }
-h3{
- color: blue;
+
+.container {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
 }
-.btn-blue{
-  border: 0;
-  margin: 5px;
-  height: 30px;
-  color: #ffffff;
-  background-color: #2ca8ff;
-  width: 10%;
-  border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  cursor: pointer;
-  transition: 0.5s;
-  font-weight: bold;
-}
+
 @media(min-width: 576px){
 	.product-grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
+  .container {
+    max-width: 1110px;
+    padding-top: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 }
 
