@@ -21,11 +21,20 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       const id = params.id
-      this.producto = this.productsService.getProduct(id);
-      if(this.producto === undefined){
-        this.error = 'El producto no existe'
-      }
+      this.fetchProduct(id)
     });
+  }
+
+  fetchProduct(id: string){
+    this.productsService.getProduct(id).subscribe(product => {
+      if(product === null){
+        this.error = 'El producto no existe'
+      }else{
+        this.producto = product
+      }
+    }, err => {
+     this.error = 'Tuvimos un error en la busqueda' 
+    })
   }
 
 }
