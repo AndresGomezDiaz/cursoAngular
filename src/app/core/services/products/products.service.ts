@@ -20,4 +20,7 @@ export class ProductsService {
     // let miResultado = this.products.find(item => Number(id) === item.id)
     // return miResultado
   }
+  deleteProduct(id: string){
+    return this.http.delete(`${environment.url_api}/products/${id}`)
+  }
 }
